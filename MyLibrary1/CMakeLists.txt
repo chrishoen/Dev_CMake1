@@ -7,6 +7,6 @@ add_library (MyLibrary1 STATIC ${SRC_FILES})
 
 target_include_directories(MyLibrary1 PUBLIC ${PROJECT_SOURCE_DIR})
 
-install(FILES ${INC_FILES} DESTINATION include)
+install(FILES ${INC_FILES} DESTINATION include/MyLibrary1)
 install(TARGETS MyLibrary1 DESTINATION lib)
 install(FILES MyLibrary1Config.cmake DESTINATION lib/cmake/MyLibrary1)

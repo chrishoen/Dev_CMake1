@@ -2,7 +2,7 @@
 
 project ("Dev_CMake1")
 
-set(CMAKE_INSTALL_PREFIX "/var/tmp/Dev_CMake1/install")
+set(CMAKE_INSTALL_PREFIX "/var/tmp/install")
 
 add_subdirectory ("MyProject1")
 add_subdirectory ("MyLibrary1")
