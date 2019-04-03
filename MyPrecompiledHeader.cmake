@@ -75,7 +75,7 @@ function(export_all_flags _filename)
   file(GENERATE OUTPUT "${_filename}" CONTENT "${_compile_definitions}${_include_directories}${_compile_flags}${_compile_options}\n")
 endfunction()
 
-function(my_add_precompiled_header _target _input)
+function(add_precompiled_header _target _input)
   cmake_parse_arguments(_PCH "FORCEINCLUDE" "SOURCE_CXX;SOURCE_C" "" ${ARGN})
 
   get_filename_component(_input_we ${_input} NAME_WE)
@@ -89,6 +89,10 @@ function(my_add_precompiled_header _target _input)
   if(MSVC)
     set(_pch_cxx_pch "${CMAKE_CFG_INTDIR}/cxx_${_input_we}.pch")
     set(_pch_c_pch "${CMAKE_CFG_INTDIR}/c_${_input_we}.pch")
+
+    get_target_property(_tgt_binary_dir ${_target} BINARY_DIR)
+    set(_pch_cxx_pch "${_tgt_binary_dir}/${_input_we}.pch")
+    set(_pch_c_pch "${_tgt_binary_dir}/c_${_input_we}.pch")
 
     get_target_property(sources ${_target} SOURCES)
     foreach(_source ${sources})
@@ -211,4 +215,13 @@ function(my_add_precompiled_header _target _input)
       endif()
     endforeach()
   endif(CMAKE_COMPILER_IS_GNUCXX)
+endfunction()
+
+#*******************************************************************************
+#*******************************************************************************
+#*******************************************************************************
+
+function(my_add_pch _target)
+   message(STATUS "my_add_pch************************************ " ${_target})
+   add_precompiled_header (${_target} stdafx.h SOURCE_CXX stdafx.cpp)
 endfunction()

@@ -12,5 +12,5 @@ MyClass1::MyClass1()
 
 void MyClass1::doSomething()
 {
-   printf("MyClass1::doSomething1\n");
+   printf("MyClass1::doSomething12\n");
 }
