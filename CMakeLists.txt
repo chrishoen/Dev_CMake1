@@ -1,9 +1,17 @@
 ﻿cmake_minimum_required (VERSION 3.8)
 
-project ("Dev_CMake1")
+include(MyPrecompiledHeader.cmake)
+include(MyCodeMacros.cmake)
+include(MyGlobalImports.cmake)
+include(MyLocalImports.cmake)
+include(MyExports.cmake)
 
-set(CMAKE_INSTALL_PREFIX "/var/tmp/install")
+project ("Dev_Make1")
+my_init_global_import_variables()
+my_init_export_variables()
 
-add_subdirectory ("MyProject1")
-add_subdirectory ("MyLibrary1")
+
+add_subdirectory ("MyLibrary")
+add_subdirectory ("MyProject")
+return()
 

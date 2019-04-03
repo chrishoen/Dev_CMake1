@@ -2,11 +2,11 @@
 //******************************************************************************
 //******************************************************************************
 
-#include <stdio.h>
+#include "stdafx.h"
 
 #include "MyFunction1.h"
 
 void doMyFunction1()
 {
-   printf("doMyFunction1\n");
+   printf("doMyFunction12\n");
 }
