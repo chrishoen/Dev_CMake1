@@ -8,5 +8,5 @@
 
 void doMyFunction1()
 {
-   printf("doMyFunction12\n");
+   printf("doMyFunction1\n");
 }
