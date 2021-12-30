@@ -2,14 +2,18 @@
 #*******************************************************************************
 #*******************************************************************************
 
-function(my_init_export_variables)
+function(my_special1)
 
+   message(STATUS "my_special***********************************************************BEGIN")
    if(MSVC)
-      set (MyInstallPath      "C:\\aaa_cprint\\bin" PARENT_SCOPE)
+      message(STATUS "my_special MSVC")
+   elseif(NOT CMAKE_SYSTEM_VERSION EQUAL 101)
+      message(STATUS "my_special LINUX")
    else()
-      set (MyInstallPath      "/opt/cprint/bin" PARENT_SCOPE)
+      message(STATUS "my_special LINUX BEAGLE")
    endif()
 
+   message(STATUS "my_special***********************************************************END")
 endfunction()
 
 #*******************************************************************************

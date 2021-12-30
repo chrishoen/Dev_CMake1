@@ -1,7 +1,7 @@
 ﻿{
   "configurations": [
     {
-      "name": "Dev_CMake1",
+      "name": "Dev_USBDevice",
       "generator": "Unix Makefiles",
       "remoteMachineName": "${defaultRemoteMachineName}",
       "configurationType": "Release",
@@ -22,10 +22,10 @@
       "rsyncCommandArgs": "-t --delete --delete-excluded",
       "remoteCopyBuildOutput": false,
       "cmakeCommandArgs": "",
-      "buildCommandArgs": "-j8",
+      "buildCommandArgs": "-j12",
       "ctestCommandArgs": "",
       "inheritEnvironments": [
-        "linux_arm"
+        "linux_x64"
       ]
     }
   ]
