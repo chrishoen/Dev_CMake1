@@ -21,9 +21,9 @@ set (CMAKE_SYSTEM_NAME Linux)
 set (CMAKE_SYSTEM_PROCESSOR aarch64)
 
 set (CMAKE_C_COMPILER "${CROSS_COMPILER_PREFIX}gcc")
-set (CMAKE_C_FLAGS 
-"-O1 -DDEBUG -Wall -Wextra -fno-strict-aliasing -pipe -g -feliminate-unused-debug-types -frecord-gcc-switches -fno-omit-frame-pointer -mcpu=cortex-a53+crc+crypto -fstack-protector-strong  -D_FORTIFY_SOURCE=2 --sysroot=${CMAKE_SYSROOT}"
-)
+###set (CMAKE_C_FLAGS 
+###"-O1 -DDEBUG -Wall -Wextra -fno-strict-aliasing -pipe -g -feliminate-unused-debug-types -frecord-gcc-switches -fno-omit-frame-pointer -mcpu=cortex-a53+crc+crypto -fstack-protector-strong  -D_FORTIFY_SOURCE=2 --sysroot=${CMAKE_SYSROOT}"
+###)
 # For optimized build, use -O3 -DNDEBUG instead
 # Should use these flags also, but lot of warnings in the code now and they become errors with these flags:
 #-Werror -Wformat -Wformat-security -Werror=format-security 
