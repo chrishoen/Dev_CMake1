@@ -1,7 +1,7 @@
 ﻿{
   "configurations": [
    {
-      "name": "Dev_USBDevice",
+      "name": "Dev_CMake1",
       "generator": "Ninja",
       "configurationType": "Release",
       "inheritEnvironments": [

@@ -7,31 +7,12 @@ include(MyPostBuild.cmake)
 include(MyGlobalImports.cmake)
 include(MyLocalImports.cmake)
 
-project ("Dev_USBDevice")
+project ("Dev_CMake1")
 my_init_global_import_variables()
 my_init_post_build_variables()
 
-add_subdirectory ("CommonLib")
-add_subdirectory ("sgslave")
+add_subdirectory ("MyProject")
 return()
 
-add_subdirectory ("usbslave")
-add_subdirectory ("motorcon")
-add_subdirectory ("testlibusb")
-return()
-
-add_subdirectory ("cdhdemulator")
-return()
-
-add_subdirectory ("CommonLib")
-return()
-
-add_subdirectory ("serialmaster")
-add_subdirectory ("serialslave")
-add_subdirectory ("CommonLib")
-add_subdirectory ("ProtoSerial")
-add_subdirectory ("serialecho")
-add_subdirectory ("Test")
-return()
 
 
