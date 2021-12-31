@@ -24,7 +24,7 @@
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-j12",
       "ctestCommandArgs": "",
-      "cmakeToolchain": "MyDartToolchain.cmake",
+      "cmakeToolchain": "imx8mm-toolchain.cmake",
       "inheritEnvironments": [
          "linux_arm64"
       ]
