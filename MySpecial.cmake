@@ -17,9 +17,6 @@ function(my_special1)
       message(STATUS "my_special LINUX UBUNTU")
    endif()
 
-   message(STATUS "CMAKE_INCLUDE_PATH" ${CMAKE_INCLUDE_PATH})
-   message(STATUS "INCLUDE_DIRECTORIES" ${INCLUDE_DIRECTORIES})
-
    message(STATUS "my_special1***********************************************************END")
 endfunction()
 
