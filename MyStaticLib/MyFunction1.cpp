@@ -6,7 +6,7 @@
 
 #include "MyFunction1.h"
 
-void doMyFunction1()
+void doFunction1()
 {
-   printf("doMyFunction1\n");
+   printf("doFunction1\n");
 }

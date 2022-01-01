@@ -15,6 +15,7 @@ my_special1()
 
 add_subdirectory ("MyProgram1")
 add_subdirectory ("MyStaticLib")
+add_subdirectory ("MyProgram2")
 return()
 
 add_subdirectory ("MyProgram1")
