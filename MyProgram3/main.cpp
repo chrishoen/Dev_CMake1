@@ -4,6 +4,6 @@
 int main(int argc, char** argv)
 {
    printf("Hello World - MyProgram3\n");
-   void doFunction2();
+   doFunction2();
    return 0;
 }
