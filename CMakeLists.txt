@@ -19,4 +19,6 @@ add_subdirectory ("MyProgram2")
 add_subdirectory ("MyProgram3")
 return()
 
+add_subdirectory ("MyProgram1")
+return()
 
