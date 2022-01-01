@@ -13,14 +13,14 @@ endif()
 
 set (SDKROOT "${YOCTO_BUILD_DIR}/work/aarch64-fslc-linux/nextgen-linux/0.1-r0")
 
-set (CMAKE_SYSROOT "${SDKROOT}/recipe-sysroot")
+set (CMAKE_SYSROOT "${SDKROOT}/recipe-sysroot" CACHE PATH "CMake sysroot22")
 set (SYSROOT_COMPONENTS "${YOCTO_BUILD_DIR}/sysroots-components")
 set (CROSS_COMPILER_PREFIX "${YOCTO_BUILD_DIR}/work/aarch64-fslc-linux/nextgen-linux/0.1-r0/recipe-sysroot-native/usr/bin/aarch64-fslc-linux/aarch64-fslc-linux-")
 
 set (CMAKE_SYSTEM_NAME Linux)
 set (CMAKE_SYSTEM_PROCESSOR aarch64)
 
-set (CMAKE_C_COMPILER "${CROSS_COMPILER_PREFIX}gcc")
+set (CMAKE_C_COMPILER "${CROSS_COMPILER_PREFIX}gcc" CACHE FILEPATH "CMake C compiler22")
 ###set (CMAKE_C_FLAGS 
 ###"-O1 -DDEBUG -Wall -Wextra -fno-strict-aliasing -pipe -g -feliminate-unused-debug-types -frecord-gcc-switches -fno-omit-frame-pointer -mcpu=cortex-a53+crc+crypto -fstack-protector-strong  -D_FORTIFY_SOURCE=2 --sysroot=${CMAKE_SYSROOT}"
 ###)
@@ -28,7 +28,7 @@ set (CMAKE_C_COMPILER "${CROSS_COMPILER_PREFIX}gcc")
 # Should use these flags also, but lot of warnings in the code now and they become errors with these flags:
 #-Werror -Wformat -Wformat-security -Werror=format-security 
 
-set (CMAKE_CXX_COMPILER "${CROSS_COMPILER_PREFIX}g++")
+set (CMAKE_CXX_COMPILER "${CROSS_COMPILER_PREFIX}g++" CACHE FILEPATH "CMake CXX compiler22")
 set (CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS}")
 
 SET(CMAKE_AR ${CROSS_COMPILER_PREFIX}ar)
