@@ -1,0 +1,11 @@
+﻿cmake_minimum_required (VERSION 3.8)
+
+project (MySharedLib CXX)
+
+my_find_src_files (src_files MySharedLib)
+add_library (MySharedLib SHARED ${src_files})
+my_add_compile_options (MySharedLib)
+my_add_pch (MySharedLib)
+
+target_include_directories(MySharedLib PUBLIC ${PROJECT_SOURCE_DIR})
+
