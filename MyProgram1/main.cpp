@@ -1,8 +1,7 @@
 #include "stdafx.h"
 
-//int main()
 int main(int argc, char** argv)
 {
-   printf("Hello World\n");
+   printf("Hello World - MyProgram1\n");
    return 0;
 }
