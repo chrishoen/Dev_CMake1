@@ -15,19 +15,14 @@
          "remoteCopySourcesOutputVerbosity": "Normal",
          "remoteCopySourcesConcurrentCopies": "10",
          "remoteCopySourcesMethod": "rsync",
-         "remoteCopySourcesExclusionList": [
-            ".vs",
-            ".git"
-         ],
+         "remoteCopySourcesExclusionList": [ ".vs", ".git" ],
          "rsyncCommandArgs": "-t --delete --delete-excluded",
          "remoteCopyBuildOutput": false,
          "cmakeCommandArgs": "",
          "buildCommandArgs": "-j12",
          "ctestCommandArgs": "",
          "cmakeToolchain": "imx8mm-toolchain.cmake",
-         "inheritEnvironments": [
-            "linux_arm64"
-         ]
+         "inheritEnvironments": [ "linux_arm64" ]
       }
    ]
 }
