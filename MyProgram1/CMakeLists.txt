@@ -4,5 +4,5 @@ project (MyProgram1 CXX)
 my_find_src_files (src_files MyProgram1)
 add_executable (MyProgram1 ${src_files})
 my_add_compile_options (MyProgram1)
-#my_add_pch (MyProgram1)
+my_add_pch (MyProgram1)
 
