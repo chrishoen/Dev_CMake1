@@ -1,7 +1,8 @@
 ﻿{
   "configurations": [
-    {
+   {
       "name": "Dev_CMake1",
+      "inheritEnvironments": [ "linux_x64" ],
       "generator": "Unix Makefiles",
       "remoteMachineName": "${defaultRemoteMachineName}",
       "configurationType": "Release",
@@ -15,18 +16,12 @@
       "remoteCopySourcesOutputVerbosity": "Normal",
       "remoteCopySourcesConcurrentCopies": "10",
       "remoteCopySourcesMethod": "rsync",
-      "remoteCopySourcesExclusionList": [
-        ".vs",
-        ".git"
-      ],
+      "remoteCopySourcesExclusionList": [ ".vs", ".git" ],
       "rsyncCommandArgs": "-t --delete --delete-excluded",
       "remoteCopyBuildOutput": false,
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-j12",
-      "ctestCommandArgs": "",
-      "inheritEnvironments": [
-        "linux_x64"
-      ]
-    }
+      "ctestCommandArgs": ""
+   }
   ]
 }

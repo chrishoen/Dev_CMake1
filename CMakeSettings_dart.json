@@ -2,6 +2,7 @@
    "configurations": [
       {
          "name": "Dev_CMake1",
+         "inheritEnvironments": [ "linux_arm64" ],
          "generator": "Unix Makefiles",
          "remoteMachineName": "${defaultRemoteMachineName}",
          "configurationType": "Release",
@@ -21,8 +22,7 @@
          "cmakeCommandArgs": "",
          "buildCommandArgs": "-j12",
          "ctestCommandArgs": "",
-         "cmakeToolchain": "imx8mm-toolchain.cmake",
-         "inheritEnvironments": [ "linux_arm64" ]
+         "cmakeToolchain": "imx8mm-toolchain.cmake"
       }
    ]
 }
