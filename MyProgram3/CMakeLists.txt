@@ -13,3 +13,5 @@ my_lib_import_MySharedLib(MyProgram3)
 
 
 
+my_post_build_bin(MyProgram3)
+

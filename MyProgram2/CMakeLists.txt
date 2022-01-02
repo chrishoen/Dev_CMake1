@@ -12,4 +12,7 @@ my_inc_import_MyStaticLib(MyProgram2)
 my_lib_import_MyStaticLib(MyProgram2)
 
 
+my_post_build_bin(MyProgram2)
+
+return()
 

@@ -2,16 +2,17 @@
 #*******************************************************************************
 #*******************************************************************************
 
-function(my_init_post_build_variables)
+function(my_post_build_bin _target)
 
-   if(MSVC)
-   elseif(CMAKE_SYSTEM_VERSION EQUAL 101)
-      set (MyRsyncBin "rsync://debian@devtgt:/prime/bin" PARENT_SCOPE)
-      set (MyRsyncLib "rsync://debian@devtgt:/prime/lib" PARENT_SCOPE)
-   else()
-      set (MyRsyncBin "rsync://main@devtgt:/prime/bin" PARENT_SCOPE)
-      set (MyRsyncLib "rsync://main@devtgt:/prime/lib" PARENT_SCOPE)
-   endif()
+   add_custom_command(
+      TARGET  ${_target}
+      POST_BUILD
+      COMMAND scp ${_target} debian@bbx:/opt/prime/bin)
+
+   add_custom_command(
+      TARGET  ${_target}
+      POST_BUILD
+      COMMAND ssh debian@bbx "sudo chmod 777 /opt/prime/bin/${_target}")
 
 endfunction()
 
@@ -24,20 +25,12 @@ function(my_post_build_lib _target)
    add_custom_command(
       TARGET  ${_target}
       POST_BUILD
-      COMMAND rsync -azv --chmod=ugo=rwx lib${_target}.so ${MyRsyncLib})
-
-endfunction()
-
-#*******************************************************************************
-#*******************************************************************************
-#*******************************************************************************
-
-function(my_post_build_bin _target)
+      COMMAND scp lib${_target}.so debian@bbx:/opt/prime/lib)
 
    add_custom_command(
       TARGET  ${_target}
       POST_BUILD
-      COMMAND rsync -azv --chmod=ugo=rwx ${_target} ${MyRsyncBin})
+      COMMAND ssh debian@bbx "sudo chmod 777 /opt/prime/lib/lib${_target}.so")
 
 endfunction()
 

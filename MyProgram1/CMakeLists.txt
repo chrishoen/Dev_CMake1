@@ -6,3 +6,19 @@ add_executable (MyProgram1 ${src_files})
 my_add_compile_options (MyProgram1)
 my_add_pch (MyProgram1)
 
+my_post_build_bin(MyProgram1)
+
+return()
+
+
+   add_custom_command(
+      TARGET  MyProgram1
+      POST_BUILD
+      COMMAND scp MyProgram1 debian@bbx:/opt/prime/bin)
+
+   add_custom_command(
+      TARGET  MyProgram1
+      POST_BUILD
+      COMMAND ssh debian@bbx "sudo chmod 777 /opt/prime/bin/MyProgram1")
+ 
+
