@@ -5,6 +5,11 @@
 function(my_special1)
 
    message(STATUS "my_special1***********************************************************BEGIN")
+   message(STATUS "CMAKE_SYSTEM         " ${CMAKE_SYSTEM})
+   message(STATUS "CMAKE_SYSTEM_VERSION " ${CMAKE_SYSTEM_VERSION})
+   message(STATUS "CMAKE_BUILD_TYPE     " ${CMAKE_BUILD_TYPE})
+   return()
+
    if(MSVC)
       message(STATUS "my_special MSVC")
    elseif(CMAKE_SYSTEM_VERSION EQUAL 101)

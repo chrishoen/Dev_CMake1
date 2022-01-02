@@ -9,9 +9,12 @@ include(MyLocalImports.cmake)
 include(MySpecial.cmake)
 
 project ("Dev_CMake1")
+my_special1() 
 my_init_global_import_variables()
 my_init_post_build_variables()
-my_special1() 
+
+add_subdirectory ("MyProgram1")
+return()
 
 add_subdirectory ("MyStaticLib")
 add_subdirectory ("MySharedLib")

@@ -12,8 +12,7 @@
          "buildCommandArgs": "-v -j12",
          "ctestCommandArgs": "",
          "intelliSenseMode": "linux-gcc-arm",
-         "cmakeToolchain": "MyBeagleToolchain.cmake",
-         "variables": []
+         "cmakeToolchain": "MyBeagleToolchain.cmake"
       }
    ]
 }
