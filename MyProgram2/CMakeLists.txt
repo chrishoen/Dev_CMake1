@@ -12,7 +12,7 @@ my_inc_import_MyStaticLib(MyProgram2)
 my_lib_import_MyStaticLib(MyProgram2)
 
 if (MSVC)
-   my_post_build_copy_bin(MyProgram2)
+   install(TARGETS MyProgram2 DESTINATION ${MyCopyBinToDir})
 elseif (MyTargetType STREQUAL ubuntu)
    my_post_build_copy_bin(MyProgram2)
 elseif (MyTargetType STREQUAL beagle)

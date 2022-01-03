@@ -13,7 +13,7 @@ my_lib_import_MySharedLib(MyProgram3)
 
 
 if (MSVC)
-   my_post_build_copy_bin(MyProgram3)
+   install(TARGETS MyProgram3 DESTINATION ${MyCopyBinToDir})
 elseif (MyTargetType STREQUAL ubuntu)
    my_post_build_copy_bin(MyProgram3)
 elseif (MyTargetType STREQUAL beagle)
