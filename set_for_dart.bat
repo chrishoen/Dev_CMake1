@@ -1,2 +1,3 @@
-copy /y CMakeSettings_linux.json CMakeSettings.json
+copy /y CMakeSettings_dart.json CMakeSettings.json
+copy /y MyConfig_dart.cmake MyConfig.cmake
 pause

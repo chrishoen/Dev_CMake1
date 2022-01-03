@@ -258,6 +258,7 @@ endfunction()
 #*******************************************************************************
 
 function(my_add_pch _target)
+   return()
    if (MSVC)
       my_add_precompiled_header (${_target})
    else()
