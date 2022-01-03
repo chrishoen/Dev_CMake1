@@ -21,9 +21,9 @@ add_subdirectory ("MyProgram2")
 add_subdirectory ("MyProgram3")
 return()
 
+add_subdirectory ("MyProgram3")
 add_subdirectory ("MySharedLib")
 return()
 
-add_subdirectory ("MyProgram1")
-return()
+
 

@@ -38,9 +38,7 @@ endfunction()
 #*******************************************************************************
 
 function(my_add_compile_options _target)
-   message(STATUS "my_add_compile_options************************ " ${_target})
-   message(STATUS "CMAKE_CXX_FLAGS************************ " ${CMAKE_CXX_FLAGS})
-   
+
    if(MSVC)
       target_compile_options(${_target} PRIVATE "/WX")
       target_compile_options(${_target} PRIVATE "/wd4996")
