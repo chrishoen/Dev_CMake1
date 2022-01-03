@@ -32,8 +32,10 @@ MyOverrides.cmake            -- some cmake overrides
 MyPostBuild.cmake            -- macros for post build copying
 MyPrecompiledHeader.cmake    -- macros for using precompiled headers
 MySpecial.cmake              -- special debuf stuff  
-set_for_beagle.bat           -- copy specific settings and config to current
-set_for_dart.bat             -- copy specific settings and config to current
-set_for_ubuntu.bat           -- copy specific settings and config to current
-set_for_win.bat              -- copy specific settings and config to current
+set_for_beagle.bat           -- copy specific CMakeSettings.json and MyConfig.cmake to current
+set_for_dart.bat             -- copy specific CMakeSettings.json and MyConfig.cmake to current
+set_for_ubuntu.bat           -- copy specific CMakeSettings.json and MyConfig.cmake to current
+set_for_win.bat              -- copy specific CMakeSettings.json and MyConfig.cmake to current
+
+Before start a new build session, run one of the set_for_* bat files
 ```
