@@ -12,7 +12,7 @@ my_inc_import_MyStaticLib(MyProgram2)
 my_lib_import_MyStaticLib(MyProgram2)
 
 
-my_post_build_copy_bin(MyProgram2)
+my_post_build_scp_bin(MyProgram2)
 
 return()
 

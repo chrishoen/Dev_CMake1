@@ -9,4 +9,4 @@ my_add_pch (MySharedLib)
 
 target_include_directories(MySharedLib PUBLIC ${PROJECT_SOURCE_DIR})
 
-my_post_build_copy_lib(MySharedLib)
+my_post_build_scp_lib(MySharedLib)

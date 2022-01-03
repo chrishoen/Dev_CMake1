@@ -13,5 +13,5 @@ my_lib_import_MySharedLib(MyProgram3)
 
 
 
-my_post_build_copy_bin(MyProgram3)
+my_post_build_scp_bin(MyProgram3)
 

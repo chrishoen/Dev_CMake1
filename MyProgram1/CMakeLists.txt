@@ -6,7 +6,7 @@ add_executable (MyProgram1 ${src_files})
 my_add_compile_options (MyProgram1)
 my_add_pch (MyProgram1)
 
-my_post_build_copy_bin(MyProgram1)
+my_post_build_scp_bin(MyProgram1)
 
 return()
 
