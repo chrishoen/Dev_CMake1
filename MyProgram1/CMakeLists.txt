@@ -6,12 +6,15 @@ add_executable (MyProgram1 ${src_files})
 my_add_compile_options (MyProgram1)
 my_add_pch (MyProgram1)
 
+
+message(STATUS "LINE101 " ${MyTargetType})
+
 if (MVC)
-elseif (MyTargetType EQUAL ubuntu)
+elseif (MyTargetType STREQUAL ubuntu)
    my_post_build_copy_bin(MyProgram1)
-elseif (MyTargetType EQUAL beagle)
+elseif (MyTargetType STREQUAL beagle)
    my_post_build_scp_bin(MyProgram1)
-elseif (MyTargetType EQUAL dart)
+elseif (MyTargetType STREQUAL dart)
    my_post_build_scp_bin(MyProgram1)
 endif()
 

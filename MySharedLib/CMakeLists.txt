@@ -9,4 +9,11 @@ my_add_pch (MySharedLib)
 
 target_include_directories(MySharedLib PUBLIC ${PROJECT_SOURCE_DIR})
 
-my_post_build_scp_lib(MySharedLib)
+if (MVC)
+elseif (MyTargetType STREQUAL ubuntu)
+   my_post_build_copy_lib(MySharedLib)
+elseif (MyTargetType STREQUAL beagle)
+   my_post_build_scp_lib(MySharedLib)
+elseif (MyTargetType STREQUAL dart)
+   my_post_build_scp_lib(MySharedLib)
+endif()

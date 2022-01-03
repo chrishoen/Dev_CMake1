@@ -10,6 +10,12 @@ function(my_special1)
    message(STATUS "CMAKE_BUILD_TYPE            " ${CMAKE_BUILD_TYPE})
    message(STATUS "CMAKE_BUILD_PARALLEL_LEVEL  " ${CMAKE_BUILD_PARALLEL_LEVEL})
    message(STATUS "DESTDIR                     " ${DESTDIR})
+
+   message(STATUS "MyTargetType                " ${MyTargetType})
+   message(STATUS "MyTargetHostName            " ${MyTargetHostName})
+   message(STATUS "MyCopyBinToDir              " ${MyCopyBinToDir})
+   message(STATUS "MyCopyLibToDir              " ${MyCopyLibToDir})
+   message(STATUS "MySudo                      " ${MySudo})
    return()
 
    if(MSVC)

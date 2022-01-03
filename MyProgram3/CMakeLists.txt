@@ -12,6 +12,11 @@ my_inc_import_MySharedLib(MyProgram3)
 my_lib_import_MySharedLib(MyProgram3)
 
 
-
-my_post_build_scp_bin(MyProgram3)
-
+if (MVC)
+elseif (MyTargetType STREQUAL ubuntu)
+   my_post_build_copy_bin(MyProgram3)
+elseif (MyTargetType STREQUAL beagle)
+   my_post_build_scp_bin(MyProgram3)
+elseif (MyTargetType STREQUAL dart)
+   my_post_build_scp_bin(MyProgram3)
+endif()

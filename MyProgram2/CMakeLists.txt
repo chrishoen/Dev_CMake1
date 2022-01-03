@@ -11,8 +11,11 @@ target_include_directories(MyProgram2 PUBLIC ${PROJECT_SOURCE_DIR})
 my_inc_import_MyStaticLib(MyProgram2)
 my_lib_import_MyStaticLib(MyProgram2)
 
-
-my_post_build_scp_bin(MyProgram2)
-
-return()
-
+if (MVC)
+elseif (MyTargetType STREQUAL ubuntu)
+   my_post_build_copy_bin(MyProgram2)
+elseif (MyTargetType STREQUAL beagle)
+   my_post_build_scp_bin(MyProgram2)
+elseif (MyTargetType STREQUAL dart)
+   my_post_build_scp_bin(MyProgram2)
+endif()
