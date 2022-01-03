@@ -8,8 +8,11 @@ my_add_pch (MyProgram2)
 
 target_include_directories(MyProgram2 PUBLIC ${PROJECT_SOURCE_DIR})
 
-my_import_local_include_MyStaticLib(MyProgram2)
-my_import_local_lib_MyStaticLib(MyProgram2)
+my_inc_import_MyStaticLib(MyProgram2)
+my_inc_import_MySharedLib(MyProgram2)
+
+my_lib_import_MyStaticLib(MyProgram2)
+my_lib_import_MySharedLib(MyProgram2)
 
 if (MSVC)
    install(TARGETS MyProgram2 DESTINATION ${MyCopyBinToDir})
