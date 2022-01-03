@@ -14,6 +14,10 @@ my_init_config_variables()
 my_special1() 
 my_init_global_import_variables()
 
+add_subdirectory ("MyProgram3")
+add_subdirectory ("MySharedLib")
+return()
+
 add_subdirectory ("MyProgram1")
 return()
 
