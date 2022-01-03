@@ -1,4 +1,5 @@
-﻿{
+﻿// copied from CMakeSettings_dart.json
+{
    "configurations": [
       {
          "name": "Dev_CMake1",
