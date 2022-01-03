@@ -8,8 +8,8 @@ my_add_pch (MyProgram3)
 
 target_include_directories(MyProgram3 PUBLIC ${PROJECT_SOURCE_DIR})
 
-my_inc_import_MySharedLib(MyProgram3)
-my_lib_import_MySharedLib(MyProgram3)
+my_import_local_include_MySharedLib(MyProgram3)
+my_import_local_lib_MySharedLib(MyProgram3)
 
 
 if (MSVC)

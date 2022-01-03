@@ -4,24 +4,18 @@
 
 function(my_init_global_import_variables)
 
-   if(MSVC)
-      set (MyRisLibIncludePath "C:\\MyTools\\MyLib\\include\\RisLib" PARENT_SCOPE)
-      set (MyRisLibImportPath  "C:\\MyTools\\MyLib\\lib\\RisLib.lib" PARENT_SCOPE)
-      set (MyDspLibIncludePath "C:\\MyTools\\MyLib\\include\\DspLib" PARENT_SCOPE)
-      set (MyDspLibImportPath  "C:\\MyTools\\MyLib\\lib\\DspLib.lib" PARENT_SCOPE)
-   elseif(CMAKE_SYSTEM_VERSION EQUAL 101)
-      set (MyRisLibIncludePath "C:/MyTools/MyLib/include/RisLib" PARENT_SCOPE)
-      set (MyRisLibImportPath  "C:/MyTools/MyLib/lib/libRisLib.so" PARENT_SCOPE)
-      set (MyDspLibIncludePath "C:/MyTools/MyLib/include/DspLib" PARENT_SCOPE)
-      set (MyDspLibImportPath  "C:/MyTools/MyLib/lib/libDspLib.so" PARENT_SCOPE)
-   else()
-      set (MyRisLibIncludePath "/opt/prime/include/RisLib" PARENT_SCOPE)
-      set (MyRisLibImportPath  "/opt/prime/lib/libRisLib.so" PARENT_SCOPE)
-      set (MyDspLibIncludePath "/opt/prime/include/DspLib" PARENT_SCOPE)
-      set (MyDspLibImportPath  "/opt/prime/lib/libDspLib.so" PARENT_SCOPE)
-      set (MyUsbIncludePath "/usr/local/include/libusb-1.0" PARENT_SCOPE)
-      set (MyUsbImportPath  "/usr/local/lib/libusb-1.0.so" PARENT_SCOPE)
+   if (MSVC)
+      set (MySharedLibIncludePath "C:/MyTools/MyLib/include/MySharedLib" PARENT_SCOPE)
+      set (MySharedLibImportPath  "C:/MyTools/MyLib/lib/MySharedLib.lib" PARENT_SCOPE)
+   elseif (MyTargetType STREQUAL ubuntu)
+      set (MySharedLibIncludePath "/opt/prime/include/MySharedLib" PARENT_SCOPE)
+      set (MySharedLibImportPath  "/opt/prime/lib/libMySharedLib.so" PARENT_SCOPE)
+   elseif (MyTargetType STREQUAL beagle)
+      set (MySharedLibIncludePath "C:/MyTools/MyLib/include/MySharedLib" PARENT_SCOPE)
+      set (MySharedLibImportPath  "C:/MyTools/MyLib/lib/libMySharedLib.so" PARENT_SCOPE)
+   elseif (MyTargetType STREQUAL dart)
    endif()
+
 
 endfunction()
 
@@ -29,71 +23,25 @@ endfunction()
 #*******************************************************************************
 #*******************************************************************************
 
-function(my_lib_import_RisLib _target)
+function(my_import_global_lib_MySharedLib _target)
 
    if (MSVC)
-      add_library(RisLib STATIC IMPORTED)
-      set_target_properties(RisLib PROPERTIES IMPORTED_LOCATION ${MyRisLibImportPath})
-      target_link_libraries(RisLib INTERFACE ws2_32)
-      target_link_libraries(RisLib INTERFACE winmm)
-      target_link_libraries(${_target} RisLib)
+      add_library(MySharedLib STATIC IMPORTED)
+      set_target_properties(MySharedLib PROPERTIES IMPORTED_LOCATION ${MySharedLibImportPath})
+      target_link_libraries(${_target} MySharedLib)
    else()
-      add_library(RisLib SHARED IMPORTED)
-      set_target_properties(RisLib PROPERTIES IMPORTED_LOCATION ${MyRisLibImportPath})
-      target_link_libraries(${_target} RisLib)
-      target_link_libraries(${_target} pthread)
-      target_link_libraries(${_target} rt)
+      add_library(MySharedLib SHARED IMPORTED)
+      set_target_properties(MySharedLib PROPERTIES IMPORTED_LOCATION ${MySharedLibImportPath})
+      target_link_libraries(${_target} MySharedLib)
    endif()
 
 endfunction()
 
-function(my_inc_import_RisLib _target)
+function(my_import_global_include_MySharedLib _target)
 
-   target_include_directories(${_target} PUBLIC ${MyRisLibIncludePath})
-
-endfunction()
-
-
-#*******************************************************************************
-#*******************************************************************************
-#*******************************************************************************
-
-function(my_lib_import_DspLib _target)
-
-   add_library(DspLib STATIC IMPORTED)
-   set_target_properties(DspLib PROPERTIES IMPORTED_LOCATION ${MyDspLibImportPath})
-
-   target_link_libraries(${_target} DspLib)
+   target_include_directories(${_target} PUBLIC ${MySharedLibIncludePath})
 
 endfunction()
-
-function(my_inc_import_DspLib _target)
-
-   target_include_directories(${_target} PUBLIC ${MyDspLibIncludePath})
-
-endfunction()
-
-#*******************************************************************************
-#*******************************************************************************
-#*******************************************************************************
-
-function(my_lib_import_libusb _target)
-
-   target_link_libraries(${_target} usb-1.0)
-   return()
-
-   add_library(UsbLib SHARED IMPORTED)
-   set_target_properties(UsbLib PROPERTIES IMPORTED_LOCATION ${MyUsbImportPath})
-   target_link_libraries(${_target} UsbLib)
-
-endfunction()
-
-function(my_inc_import_libusb _target)
-
-   target_include_directories(${_target} PUBLIC ${MyUsbIncludePath})
-
-endfunction()
-
 
 #*******************************************************************************
 #*******************************************************************************
