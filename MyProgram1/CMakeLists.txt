@@ -7,7 +7,8 @@ my_add_compile_options (MyProgram1)
 my_add_pch (MyProgram1)
 
 
-if (MVC)
+if (MSVC)
+   my_post_build_copy_bin(MyProgram1)
 elseif (MyTargetType STREQUAL ubuntu)
    my_post_build_copy_bin(MyProgram1)
 elseif (MyTargetType STREQUAL beagle)
