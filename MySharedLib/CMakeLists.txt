@@ -9,6 +9,7 @@ my_add_pch (MySharedLib)
 
 target_include_directories(MySharedLib PUBLIC ${PROJECT_SOURCE_DIR})
 
+return()
 if (MVC)
 elseif (MyTargetType STREQUAL ubuntu)
    my_post_build_copy_lib(MySharedLib)

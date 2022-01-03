@@ -80,7 +80,7 @@ function(my_post_build_copy_bin _target)
       COMMAND ${_command}
       VERBATIM)
 
-   set(_command ${MySudo}chmod 777 ${MyCopyBinToDir}/${_target})
+   set(_command chmod 777 ${MyCopyBinToDir}/${_target})
    add_custom_command(
       TARGET  ${_target}
       POST_BUILD
@@ -112,7 +112,7 @@ function(my_post_build_copy_lib _target)
       COMMAND ${_command}
       VERBATIM)
 
-   set(_command ${MySudo}chmod 777 ${MyCopyLibToDir}/lib${_target}.so)
+   set(_command chmod 777 ${MyCopyLibToDir}/lib${_target}.so)
    add_custom_command(
       TARGET  ${_target}
       POST_BUILD
