@@ -1,4 +1,4 @@
-@echo "MY INSTALL BEGIN"
-@echo "MY INSTALL END"
-exit /b 101
+@echo "MY INSTALL BEGIN" > out.txt
+@echo "MY INSTALL END" > out.txt
+@exit 101
 
